@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Jack and the Beanstalk</title>
+    <style>
+        canvas {
+            background-color: blue;
+        }
+        #canvas-container {
+            display: flex;
+            justify-content: center;
+        }
+        img {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div id='canvas-container'>
+        <canvas id='canvas'  width='1500' height='900'></canvas>
+    </div>
+    <img src='assets/img/background.png' id='background'>
+    <img src='assets/img/parallax.jpg' id='parallax'>
+    <img src='assets/img/jack.png' id='jack'>
+    <script src='jack.js'></script>
+    <script src='render.js'></script>
+
+</body>
+</html>
