@@ -1,30 +1,57 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Jack and the Beanstalk</title>
-    <style>
-        canvas {
-            background-color: blue;
-        }
-        #canvas-container {
-            display: flex;
-            justify-content: center;
-        }
-        img {
-            display: none;
-        }
-    </style>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-    <div id='canvas-container'>
-        <canvas id='canvas'  width='1500' height='900'></canvas>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-2 text-center">
+                <h3 id="score"></h3>
+            </div>
+            <div class="col-md-8">
+                <canvas id='canvas'  width='1250px' height='700px'></canvas>
+                <div class="text_box">
+                    <h3>
+                        > Welcome to Neo-Tokyo-Anime-Bitcoin-Jack-and-the-Beanstalk
+                    </h3>
+                </div>
+            </div>
+            <div class="col-md-2">
+                <h3 class="text-center"><u>To-Do:</u></h3>
+                <ul>
+                    <li>Find platform sprites</li>
+                    <li>Add in platforms</li>
+                    <li>Add in platform collision</li>
+                    <li>Find music</li>
+                    <li>Get other assets</li>
+                    <li>Plan level design</li>
+                    <li>Plan text</li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+            </div>
+        </div>
+        
     </div>
     <img src='assets/img/background.png' id='background'>
     <img src='assets/img/parallax.jpg' id='parallax'>
+    <img src='assets/img/parallax.jpg' id='parallax2'>
     <img src='assets/img/jack.png' id='jack'>
+    <img src="assets/img/silver/0.png" alt="" id="coin0">
+    <img src="assets/img/silver/1.png" alt="" id="coin1">
+    <img src="assets/img/silver/2.png" alt="" id="coin2">
+    <img src="assets/img/silver/3.png" alt="" id="coin3">
+    <img src="assets/img/silver/4.png" alt="" id="coin4">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
     <script src='jack.js'></script>
+    <script src="coin.js"></script>
     <script src='render.js'></script>
-
 </body>
 </html>
