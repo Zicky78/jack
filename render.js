@@ -24,7 +24,7 @@ const parallax = {
 
 const parallax2 = {
 	imgSrc: document.getElementById('parallax2'),
-	x: -3840,
+	x: -2024,
 	y: 0,
 	w: 2024,
 	h: 1232,
@@ -116,26 +116,39 @@ function drawParallax() {
 }
 
 function updateParallax() {
-	if (jack.x > 0) {
+	if (jack.x > 0 && jack.x < 1250 - jack.w + 10) {
 		parallax.x += jack.velX;
 		parallax2.x += jack.velX;
-	} else {
-		parallax.x = 0;
-		parallax2.x = -2024;
-	}
-
-	if (parallax.x < 0) {
-		parallax2.x = -2024;
 	}
 }
 
 function drawJack() {
-	ctx.drawImage(jackImg.imgSrc, jackImg.x, jackImg.y, jackImg.w, jackImg.h, jack.x, jack.y, jack.w, jack.h);
+	ctx.drawImage(
+		jackImg.imgSrc,
+		jackImg.x,
+		jackImg.y,
+		jackImg.w,
+		jackImg.h,
+		jack.x,
+		jack.y,
+		jack.w,
+		jack.h
+	);
 }
 
 function drawCoins() {
-	coins.forEach((coin) => {
-		ctx.drawImage(coin.imgSrc, 0, 0, coin.w, 14, coin.x, coin.y, coin.w * 2, coin.h);
+	coins.forEach(coin => {
+		ctx.drawImage(
+			coin.imgSrc,
+			0,
+			0,
+			coin.w,
+			14,
+			coin.x,
+			coin.y,
+			coin.w * 2,
+			coin.h
+		);
 	});
 }
 
