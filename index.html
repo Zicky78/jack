@@ -12,54 +12,208 @@
 		<link rel="stylesheet" href="css/styles.css" />
 	</head>
 	<body>
-		<div class="container-fluid">
-			<div class="row">
-				<div class="col-md-2 text-center">
-					<h3 id="score"></h3>
-				</div>
-				<div class="col-md-8">
-					<canvas
-						id="canvas"
-						width="1250px"
-						height="700px"
-					></canvas>
-					<div class="text_box">
-						<h3 id="game-text">
-							> Press Enter to Start
-						</h3>
-					</div>
-				</div>
-				<!-- <div class="col-md-2">
-                <h3 class="text-center"><u>To-Do:</u></h3>
-                <ul>
-                    <li>Find platform sprites</li>
-                    <li>Add in platforms</li>
-                    <li>Add in platform collision</li>
-                    <li>Find music</li>
-                    <li>Get other assets</li>
-                    <li>Plan level design</li>
-                    <li>Plan text</li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-            </div> -->
-			</div>
-		</div>
-		<img src="assets/img/background.png" id="background" />
-		<img src="assets/img/parallax.jpg" id="parallax" />
-		<img src="assets/img/parallax.jpg" id="parallax2" />
-		<img src="assets/img/jack.png" id="jack" />
-		<img src="assets/img/silver/0.png" alt="" id="coin0" />
-		<img src="assets/img/silver/1.png" alt="" id="coin1" />
-		<img src="assets/img/silver/2.png" alt="" id="coin2" />
-		<img src="assets/img/silver/3.png" alt="" id="coin3" />
-		<img src="assets/img/silver/4.png" alt="" id="coin4" />
+        <div class="container-fluid">
+            <div class="row black">
+                <div class="col-md-1 col-md-offset-2"><img src="/assets/img/jack-face.png" alt="" id="storyImgElement"></div>
+                <div class="col-md-6 col-md-offset-1">
+                    <h4 id="storyTextElement">Cyberpunk Jack and the Beanstalk. But it's not a beanstalk. It's virtual reality</h4>
+                </div>
+            </div>
+            <div class="row black2">
+                <div class="col-md-12 text-center"><button id="textButton" onclick="advanceText()"><i class="glyphicon glyphicon-play-circle"></i></button></div>
+            </div>
+            <div class="row">
+                <div class="col-md-12 text-center" id="skip">
+                    <button class="btn btn-primary"><a href="virtual-reality.html">
+                            Skip to Game > </span>
+                    </a>
+                    </button>
+                </div>
+            </div>
+        </div>
+
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-		<script src="js/bootstrap.min.js"></script>
-		<script src="jack.js"></script>
-		<script src="coin.js"></script>
-		<script src="level-one.js"></script>
-		<script src="game-control.js"></script>
-		<script src="render.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+        
+        <script>
+        
+            const storyTextElement = document.getElementById('storyTextElement');
+            const storyImgElement = document.getElementById('storyImgElement');
+            const textButton = document.getElementById('textButton');
+
+            let i = 0;
+
+            var story = [];
+
+            var storyElement = {
+                text: 'Once upon a time there lived a widow woman and her son, Jack.',
+                img: ''
+            }
+
+            story.push(storyElement);
+
+            storyElement = {
+                text: 'Every day, Jack would help his mother with the chores - repairing their beat up hovercar, mining cryptocurrencies, and trading their spare electronics on the black market.',
+                img: ''
+            }
+
+            story.push(storyElement);
+
+            storyElement = {
+                text: 'But despite all their hard work, Jack and his mother were very poor with barely enough money to buy their food rations.',
+                img: ''
+            }
+
+            story.push(storyElement);
+
+            storyElement = {
+                text: '“What shall we do, what shall we do?”',
+                img: '/assets/img/mom-face-sad.png'
+            }
+
+            story.push(storyElement);
+
+            storyElement = {
+                text: '“We don’t have enough money to buy food rations this month. We must sell our bitcoin mining rig to buy a cheaper one, and use the change left over to get food.”',
+                img: '/assets/img/mom-face-sad.png'
+            }
+
+            story.push(storyElement);
+
+            storyElement = {
+                text: '“All right, mother. I’ll go to the black market tonight and sell it”',
+                img: '/assets/img/jack-face.png'
+            }
+
+            story.push(storyElement);
+
+            storyElement = {
+                text: 'So Jack took the bitcoin mining setup, walked out of the back door facing the alley, and off into the night. He hadn’t gone far when a man approached him.',
+                img: ''
+            }
+
+            story.push(storyElement);
+
+            storyElement = {
+                text: '“Good evening, Jack”',
+                img: '/assets/img/mm-face.png'
+            }
+
+            story.push(storyElement);
+
+            storyElement = {
+                text: '“Good evening to you”',
+                img: '/assets/img/jack-face.png'
+            }
+
+            story.push(storyElement);
+
+            storyElement = {
+                text: '“Where are you off to this late at night?”',
+                img: '/assets/img/mm-face.png'
+            }
+
+            story.push(storyElement);
+
+            storyElement = {
+                text: '“To sell this bitcoin miner to buy a cheaper one and buy food rations”',
+                img: '/assets/img/jack-face.png'
+            }
+
+            story.push(storyElement);
+
+            storyElement = {
+                text: '“Is that so? Well, it just so happens that I have something even better than that. You see, this here is a virtual reality machine. It lets you go into the virtual world and bring back whatever you want from it. All the bitcoin you can dream of. How about I trade you it?”',
+                img: '/assets/img/mm-face.png'
+            }
+
+            story.push(storyElement);
+
+            storyElement = {
+                text: '“I don’t know… We need to get food rations for the month”',
+                img: '/assets/img/jack-face-mad.png'
+            }
+
+            story.push(storyElement);
+
+            storyElement = {
+                text: '“With this, you can get food rations to last you a lifetime. Not only that, but you dont even have to buy the cheap synthetic stuff. You can buy actual food, like the government eats. Wouldn’t that make your momma so happy?”',
+                img: '/assets/img/mm-face.png'
+            }
+
+            story.push(storyElement);
+
+            storyElement = {
+                text: '“That sounds amazing. I’ve never tried real food before! You’ve got yourself a deal!”',
+                img: '/assets/img/jack-face-grin.png'
+            }
+
+            story.push(storyElement);
+
+            storyElement = {
+                text: 'They traded machines and parted ways, and Jack headed back home to show his mother.',
+                img: ''
+            }
+
+            story.push(storyElement);
+
+            storyElement = {
+                text: '“Back already, Jack? How many food rations did you get?”',
+                img: '/assets/img/mom-face.png'
+            }
+
+            story.push(storyElement);
+
+            storyElement = {
+                text: '“None mother. A man traded me this amazing machine that can let you go into the virtual world and bring back bitcoin from it. Tons of it.”',
+                img: '/assets/img/jack-face-grin.png'
+            }
+
+            story.push(storyElement);
+
+            storyElement = {
+                text: 'Jack plugged in the machine, and pushed the power button. The screen lit up for a brief second, and then sparks flew out everywhere, and the screen turned off.',
+                img: ''
+            }
+
+            story.push(storyElement);
+
+            storyElement = {
+                text: 'Jack’s mother burst into tears at this, saddened that her son had been tricked into trading for something that didn’t work.',
+                img: '/assets/img/mom-face-sad.png'
+            }
+
+            story.push(storyElement);
+
+            storyElement = {
+                text: 'Jack ran upstairs to his room with the machine crying, ashamed that he had failed his mother. What were they going to do for food now? As Jack fell asleep, he didn’t notice the screen of the unplugged machine flickering, before turning on. And he didn’t notice when he got sucked into it.',
+                img: '/assets/img/jack-face-mad.png'
+            }
+
+            story.push(storyElement);
+
+            storyElement = {
+                text: 'When Jack next awoke, things looked quite different...',
+                img: ''
+            }
+
+            story.push(storyElement);
+
+
+            
+
+            function advanceText() {
+                i++;
+                if(i === 22) {
+                    window.location.href = 'virtual-reality.html';
+                }
+                storyTextElement.innerText = story[i].text;
+                storyImgElement.src = story[i].img;
+                console.log(i);
+            };
+
+        
+        </script>
+		
 	</body>
 </html>

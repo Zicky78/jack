@@ -1,10 +1,8 @@
 function levelOne() {
 	levelOneCoins();
-	gameText.innerText = '> Collect the coins to progress to the next level';
-	setTimeout(() => {
-		gameText.innerHTML =
-			'> Left and right arrows to move <br> > Space to jump';
-	}, 1000);
+
+	gameText.innerHTML =
+		'> Collect the coins to progress to the next level <br> > Use Left <code><-</code> and Right <code>-></code> arrows to move <br> > Use <code>Space</code> to jump';
 }
 
 function levelOneCoins() {

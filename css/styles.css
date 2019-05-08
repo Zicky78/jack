@@ -1,6 +1,7 @@
 body {
 	color: white;
 	background-color: rgb(65, 44, 78);
+	margin: 50px;
 }
 
 canvas {
@@ -13,7 +14,8 @@ img {
 
 .text_box {
 	border: 5px solid white;
-	min-height: 150px;
+	min-height: 160px;
+	width: 1250px;
 	background-color: rgb(26, 26, 26);
 	margin-top: -5px;
 	padding-left: 20px;
@@ -23,4 +25,66 @@ img {
 
 .container-fluid {
 	margin-top: 15px;
+}
+
+.black {
+	background-color: black;
+	margin-top: 10vh;
+	padding-top: 150px;
+	height: 450px;
+}
+
+.black2,
+button,
+button::after {
+	background-color: black;
+	border: none;
+}
+
+.col-md-1 img {
+	display: inline-block;
+}
+
+col-md-1 {
+	padding-top: 150px;
+}
+
+h4 {
+	line-height: 50px;
+}
+
+h3 {
+	line-height: 40px;
+}
+
+.glyphicon {
+	font-size: 50px;
+}
+
+.black2 {
+	padding-bottom: 20px;
+}
+
+a,
+a:hover,
+.caret {
+	color: #fff;
+}
+
+#skip {
+	margin-top: 20px;
+}
+
+.btn-primary {
+	background-color: rgb(139, 73, 180);
+	border: none;
+}
+
+.btn-primary:hover {
+	background-color: rgb(194, 132, 233);
+}
+
+code {
+	color: rgb(139, 73, 180);
+	background-color: #0a0a0a;
 }
