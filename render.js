@@ -53,6 +53,12 @@ function drawCanvas() {
 	/*/ Draw Background /*/
 	drawBackground();
 
+	/*/ Draw Platforms /*/
+	drawPlatforms();
+
+	/*/ Check Platform Collision /*/
+	checkPlatformCollision();
+
 	/*/ Draw Coins /*/
 	drawCoins();
 
@@ -154,6 +160,22 @@ function drawCoins() {
 
 function updateScore() {
 	scoreDisplay.innerText = `Score: ${score}`;
+}
+
+function drawPlatforms() {
+	platforms.forEach(platform => {
+		ctx.drawImage(
+			platform.imgSrc,
+			0,
+			0,
+			32,
+			32,
+			platform.x,
+			platform.y,
+			platform.w,
+			platform.h
+		);
+	});
 }
 
 requestAnimationFrame(drawCanvas);
