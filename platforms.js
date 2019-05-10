@@ -25,19 +25,17 @@ let platform2 = {
 platforms.push(platform2);
 
 function checkPlatformCollision() {
-	platforms.forEach(platform => {
+	for (i = 0; i < platforms.length; i++) {
 		if (
-			jack.x + jack.w - 15 > platform.x &&
-			jack.x + 15 < platform.x + platform.w
+			jack.x + jack.w - 15 > platforms[i].x &&
+			jack.x + 15 < platforms[i].x + platforms[i].w &&
+			(jack.y + jack.h < platforms[i].y ||
+				jack.y + jack.h === platforms[i].y)
 		) {
-			if (
-				jack.y + jack.h < platform.y ||
-				jack.y + jack.h === platform.y
-			) {
-				ground = platform.y - jack.h;
-			}
+			ground = platforms[i].y - jack.h;
+			break;
 		} else {
 			ground = canvas.height - jack.h;
 		}
-	});
+	}
 }
