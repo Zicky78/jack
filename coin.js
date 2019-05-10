@@ -4,7 +4,7 @@ const coinImg2 = document.getElementById('coin2');
 const coinImg3 = document.getElementById('coin3');
 const coinImg4 = document.getElementById('coin4');
 
-const coinImgs = [coinImg0, coinImg1, coinImg2, coinImg3, coinImg4];
+const coinImgs = [ coinImg0, coinImg1, coinImg2, coinImg3, coinImg4 ];
 
 const coins = [];
 
@@ -16,10 +16,7 @@ setInterval(() => {
 	} else {
 		coinImgCounter = 0;
 	}
-}, 1000 / 10);
-
-function updateCoins() {
-	coins.forEach(coin => {
+	coins.forEach((coin) => {
 		coin.imgSrc = coinImgs[coinImgCounter];
 		switch (coinImgCounter) {
 			case 0:
@@ -27,27 +24,27 @@ function updateCoins() {
 				break;
 			case 1:
 				coin.w = 10;
-				coin.y -= 1;
+				coin.y -= 4;
 				break;
 			case 2:
 				coin.w = 6;
-				coin.y -= 1;
+				coin.y -= 4;
 				break;
 			case 3:
 				coin.w = 10;
-				coin.y += 1;
+				coin.y += 4;
 				break;
 			case 4:
 				coin.w = 13;
-				coin.y += 1;
+				coin.y += 4;
 				break;
 		}
 	});
-}
+}, 1000 / 10);
 
 function checkCoinCollision() {
 	let coinIndex = 0;
-	coins.forEach(coin => {
+	coins.forEach((coin) => {
 		if (
 			coin.x + 14 > jack.x &&
 			coin.x + 14 < jack.x + jack.w &&

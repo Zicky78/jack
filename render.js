@@ -62,9 +62,6 @@ function drawCanvas() {
 	/*/ Draw Coins /*/
 	drawCoins();
 
-	/*/ Update Coins /*/
-	updateCoins();
-
 	/*/ Update Jack /*/
 	updateJack();
 
@@ -129,32 +126,12 @@ function updateParallax() {
 }
 
 function drawJack() {
-	ctx.drawImage(
-		jackImg.imgSrc,
-		jackImg.x,
-		jackImg.y,
-		jackImg.w,
-		jackImg.h,
-		jack.x,
-		jack.y,
-		jack.w,
-		jack.h
-	);
+	ctx.drawImage(jackImg.imgSrc, jackImg.x, jackImg.y, jackImg.w, jackImg.h, jack.x, jack.y, jack.w, jack.h);
 }
 
 function drawCoins() {
-	coins.forEach(coin => {
-		ctx.drawImage(
-			coin.imgSrc,
-			0,
-			0,
-			coin.w,
-			14,
-			coin.x,
-			coin.y,
-			coin.w * 2,
-			coin.h
-		);
+	coins.forEach((coin) => {
+		ctx.drawImage(coin.imgSrc, 0, 0, coin.w, 14, coin.x, coin.y, coin.w * 2, coin.h);
 	});
 }
 
@@ -163,18 +140,8 @@ function updateScore() {
 }
 
 function drawPlatforms() {
-	platforms.forEach(platform => {
-		ctx.drawImage(
-			platform.imgSrc,
-			0,
-			0,
-			32,
-			32,
-			platform.x,
-			platform.y,
-			platform.w,
-			platform.h
-		);
+	platforms.forEach((platform) => {
+		ctx.drawImage(platform.imgSrc, 0, 0, 160, 32, platform.x, platform.y, platform.w, platform.h);
 	});
 }
 
