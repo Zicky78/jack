@@ -194,12 +194,32 @@ function resetParallax() {
 }
 
 function drawJack() {
-	ctx.drawImage(jackImg.imgSrc, jackImg.x, jackImg.y, jackImg.w, jackImg.h, jack.x, jack.y, jack.w, jack.h);
+	ctx.drawImage(
+		jackImg.imgSrc,
+		jackImg.x,
+		jackImg.y,
+		jackImg.w,
+		jackImg.h,
+		jack.x,
+		jack.y,
+		jack.w,
+		jack.h
+	);
 }
 
 function drawCoins() {
-	coins.forEach((coin) => {
-		ctx.drawImage(coin.imgSrc, 0, 0, coin.w, 14, coin.x, coin.y, coin.w * 2, coin.h);
+	coins.forEach(coin => {
+		ctx.drawImage(
+			coin.imgSrc,
+			0,
+			0,
+			coin.w,
+			14,
+			coin.x,
+			coin.y,
+			coin.w * 2,
+			coin.h
+		);
 	});
 }
 
@@ -208,23 +228,23 @@ function updateScore() {
 }
 
 function drawPlatforms() {
-	platforms.forEach((platform) => {
-		ctx.drawImage(platform.imgSrc, 0, 0, 160, 32, platform.x, platform.y, platform.w, platform.h);
+	platforms.forEach(platform => {
+		ctx.drawImage(
+			platform.imgSrc,
+			0,
+			0,
+			160,
+			32,
+			platform.x,
+			platform.y,
+			platform.w,
+			platform.h
+		);
 	});
 }
 
 function drawLep() {
 	ctx.drawImage(lep.imgSrc, 0, 0, 530, 530, lep.x, lep.y, lep.w, lep.h);
-}
-
-function checkLep() {
-	if (lep.x + 14 > jack.x && lep.x + 14 < jack.x + jack.w && lep.y + 14 > jack.y && lep.y + 14 < jack.y + jack.h) {
-		lep.x = -1000;
-		lep.y = -1000;
-		setTimeout(() => {
-			window.location.href = 'story2.html';
-		}, 1000);
-	}
 }
 
 requestAnimationFrame(drawCanvas);

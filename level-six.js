@@ -30,8 +30,8 @@ function levelSixObjects() {
 	coins.push(coin2);
 
 	let coin3 = {
-		x: 340 - 20 + 80 - 14,
-		y: 340 - 28 - 20,
+		x: 100 + 160 - 28,
+		y: 460 - 28 - 20,
 		w: 28,
 		h: 28,
 		imgSrc: coinImgs[0]
@@ -40,16 +40,6 @@ function levelSixObjects() {
 	coins.push(coin3);
 
 	let coin4 = {
-		x: canvas.width / 2 - 14,
-		y: 460 - 28 - 20,
-		w: 28,
-		h: 28,
-		imgSrc: coinImgs[0]
-	};
-
-	coins.push(coin4);
-
-	let coin5 = {
 		x: 770 + 80 - 14,
 		y: 340 - 28 - 20,
 		w: 28,
@@ -57,7 +47,7 @@ function levelSixObjects() {
 		imgSrc: coinImgs[0]
 	};
 
-	coins.push(coin5);
+	coins.push(coin4);
 
 	let platform = {
 		x: 100,
@@ -70,7 +60,7 @@ function levelSixObjects() {
 	platforms.push(platform);
 
 	let platform2 = {
-		x: 990,
+		x: 100 + 160 + 160 + 10,
 		y: 220,
 		w: 160,
 		h: 32,

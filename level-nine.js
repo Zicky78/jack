@@ -1,14 +1,14 @@
-function levelEight() {
+function levelNine() {
 	clearPlatforms();
 	clearCoins();
-	levelEightObjects();
+	levelNineObjects();
 	jack.x = 100;
 	jack.y = 520;
 	jack.velY = -6;
 	resetParallax();
 }
 
-function levelEightObjects() {
+function levelNineObjects() {
 	// let coin = {
 	// 	x: 100 + 20,
 	// 	y: 172,
