@@ -6,7 +6,7 @@ const coinImg4 = document.getElementById('coin4');
 
 const coinImgs = [ coinImg0, coinImg1, coinImg2, coinImg3, coinImg4 ];
 
-const coins = [];
+let coins = [];
 
 let coinImgCounter = 0;
 
@@ -56,4 +56,8 @@ function checkCoinCollision() {
 		}
 		coinIndex++;
 	});
+}
+
+function clearCoins() {
+	coins = [];
 }

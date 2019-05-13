@@ -15,7 +15,7 @@ let left = false;
 let score = 0;
 let ground = canvas.height - jack.h;
 
-document.addEventListener('keydown', key => {
+document.addEventListener('keydown', (key) => {
 	if (key.code === 'ArrowRight') {
 		if (jack.velX < 4) {
 			jack.velX += 2;
@@ -91,7 +91,7 @@ document.addEventListener('keydown', key => {
 	}
 });
 
-document.addEventListener('keyup', key => {
+document.addEventListener('keyup', (key) => {
 	if (key.code === 'ArrowRight') {
 		let rightInterval = setInterval(() => {
 			jack.velX -= 1.7;
@@ -176,6 +176,7 @@ function updateJack() {
 	if (jack.y > ground) {
 		jack.y = ground;
 		jack.onGround = true;
+		jack.velY = 0;
 	}
 
 	if (jack.x < 0) {

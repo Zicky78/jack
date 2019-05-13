@@ -1,53 +1,67 @@
-function levelOne() {
+function levelSix() {
 	clearPlatforms();
 	clearCoins();
-	levelOneObjects();
-
-	gameText.innerHTML =
-		'> Collect the coins to progress to the next level <br> > Use Left <code><-</code> and Right <code>-></code> arrows to move <br> > Use <code>Space</code> to jump';
+	levelSixObjects();
+	jack.x = 100;
+	jack.y = 400;
+	jack.velY = -6;
+	resetParallax();
 }
 
-function levelOneObjects() {
+function levelSixObjects() {
 	let coin = {
-		x: 886,
+		x: 100 + 80 - 14,
 		y: 172,
 		w: 28,
 		h: 28,
 		imgSrc: coinImgs[0]
 	};
 
+	coins.push(coin);
+
 	let coin2 = {
-		x: 646,
-		y: 292,
+		x: 990 + 80 - 14,
+		y: 172,
 		w: 28,
 		h: 28,
 		imgSrc: coinImgs[0]
 	};
+
+	coins.push(coin2);
 
 	let coin3 = {
-		x: 406,
-		y: 412,
+		x: 340 - 20 + 80 - 14,
+		y: 340 - 28 - 20,
 		w: 28,
 		h: 28,
 		imgSrc: coinImgs[0]
 	};
+
+	coins.push(coin3);
 
 	let coin4 = {
-		x: 166,
-		y: 532,
+		x: canvas.width / 2 - 14,
+		y: 460 - 28 - 20,
 		w: 28,
 		h: 28,
 		imgSrc: coinImgs[0]
 	};
 
-	coins.push(coin);
-	coins.push(coin2);
-	coins.push(coin3);
 	coins.push(coin4);
 
+	let coin5 = {
+		x: 770 + 80 - 14,
+		y: 340 - 28 - 20,
+		w: 28,
+		h: 28,
+		imgSrc: coinImgs[0]
+	};
+
+	coins.push(coin5);
+
 	let platform = {
-		x: 820,
-		y: 220,
+		x: 100,
+		y: 340,
 		w: 160,
 		h: 32,
 		imgSrc: p_m
@@ -56,8 +70,8 @@ function levelOneObjects() {
 	platforms.push(platform);
 
 	let platform2 = {
-		x: 580,
-		y: 340,
+		x: 990,
+		y: 220,
 		w: 160,
 		h: 32,
 		imgSrc: p_m
@@ -66,7 +80,7 @@ function levelOneObjects() {
 	platforms.push(platform2);
 
 	let platform3 = {
-		x: 340,
+		x: 100,
 		y: 460,
 		w: 160,
 		h: 32,
@@ -76,8 +90,8 @@ function levelOneObjects() {
 	platforms.push(platform3);
 
 	let platform4 = {
-		x: 100,
-		y: 580,
+		x: 770,
+		y: 340,
 		w: 160,
 		h: 32,
 		imgSrc: p_m

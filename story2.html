@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta
+			name="viewport"
+			content="width=device-width, initial-scale=1.0"
+		/>
+		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+		<title>Jack and the Beanstalk</title>
+		<link rel="stylesheet" href="css/bootstrap.min.css" />
+		<link rel="stylesheet" href="css/styles.css" />
+	</head>
+	<body>
+        <div class="container-fluid">
+            <div class="row black">
+                <div class="col-md-1 col-md-offset-2"><img src="assets/img/jack-face.png" alt="" id="storyImgElement"></div>
+                <div class="col-md-6 col-md-offset-1">
+                    <h4 id="storyTextElement">Jack had finally caught the leprechaun, and had picked up some of his gold coins along the way. </h4>
+                </div>
+            </div>
+            <div class="row black2">
+                <div class="col-md-12 text-center"><button id="textButton" onclick="advanceText()"><i class="glyphicon glyphicon-play-circle"></i></button></div>
+            </div>
+            <div class="row">
+                <div class="col-md-12 text-center" id="skip">
+                    <button class="btn btn-primary"><a href="game2.html">
+                            Skip to Game > </span>
+                    </a>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+        
+        <script>
+        
+            const storyTextElement = document.getElementById('storyTextElement');
+            const storyImgElement = document.getElementById('storyImgElement');
+            const textButton = document.getElementById('textButton');
+
+            let i = 0;
+
+            var story = [];
+
+            var storyElement = {
+                text: '',
+                img: ''
+            }
+
+            story.push(storyElement);
+
+            storyElement = {
+                text: '“Well, you caught me. I suppose I have to grant you a wish now”',
+                img: 'assets/img/lep-face.png'
+            }
+
+            story.push(storyElement);
+
+            storyElement = {
+                text: '“I wish for enough food for me and my mom for the rest of our lives!”',
+                img: 'assets/img/jack-face-grin.png'
+            }
+
+            story.push(storyElement);
+
+            storyElement = {
+                text: '“Fee fi fo fum. Your wish has now been granted. Don’t come looking for me again. You won’t catch me next time”',
+                img: 'assets/img/lep-face.png'
+            }
+
+            story.push(storyElement);
+
+            storyElement = {
+                text: 'With that, the leprechaun vanished, and Jack returned home. When he arrived at the farm, there were mountains of food everywhere. Grain, beans, potatoes, carrots, beef, poultry, and so much more.',
+                img: ''
+            }
+
+            story.push(storyElement);
+
+            storyElement = {
+                text: '“Jack, where did all of this food come from?”',
+                img: 'assets/img/mom-face.png'
+            }
+
+            story.push(storyElement);
+
+            storyElement = {
+                text: '“I caught a leprechaun! It gave me a wish, so I wished for enough food for us for the rest of our lives!”',
+                img: 'assets/img/jack-face-grin.png'
+            }
+
+            story.push(storyElement);
+
+            storyElement = {
+                text: '“Oh Jack, don’t you know what you’ve done? There’s not enough room to store all of this. Most of it will surely go bad. I am glad that we have food to eat, but there were better things to wish for.”',
+                img: 'assets/img/mom-face-sad.png'
+            }
+
+            story.push(storyElement);
+
+            storyElement = {
+                text: 'Jack was angry at himself for being foolish. With the amount of food that would end up spoiling, there wouldn’t be enough to last a couple months, much less a lifetime.',
+                img: ''
+            }
+
+            story.push(storyElement);
+
+            storyElement = {
+                text: 'Jack and his mother sold what they could, and were much better off than they were before, but Jack kept thinking about his wasted wish.',
+                img: ''
+            }
+
+            story.push(storyElement);
+
+            storyElement = {
+                text: 'A few weeks went by, and Jack had been waiting patiently for a day like today. It was the morning after a thunderstorm, and as the sun began to come up above the horizon, a colorful rainbow appeared in the sky.',
+                img: ''
+            }
+
+            story.push(storyElement);
+
+            storyElement = {
+                text: 'Jack went and followed the rainbow once more, in the hope of catching the leprechaun again and getting another wish.',
+                img: ''
+            }
+
+            story.push(storyElement);
+
+            function advanceText() {
+                if(i === 11) {
+                    window.location.href = 'game.html';
+                }
+                i++;
+                storyTextElement.innerText = story[i].text;
+                storyImgElement.src = story[i].img;
+                console.log(i);
+            };
+
+        
+        </script>
+		
+	</body>
+</html>

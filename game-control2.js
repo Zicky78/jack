@@ -6,40 +6,41 @@ const gameText = document.getElementById('game-text');
 document.addEventListener('keydown', (key) => {
 	if (!started) {
 		if (key.code === 'Enter') {
-			levelOne();
+			levelFive();
 			started = true;
-			levelCounter = 1;
+			levelCounter = 5;
+			score = 320;
 		}
 	}
 });
 
 function checkLevel() {
-	if (score === 40) {
-		if (levelCounter != 2) {
-			levelCounter = 2;
+	if (score === 370) {
+		if (levelCounter != 6) {
+			levelCounter = 6;
 
 			setTimeout(() => {
-				levelTwo();
+				levelSix();
 			}, 1000);
 		}
 	}
 
 	if (score === 140) {
-		if (levelCounter != 3) {
-			levelCounter = 3;
+		if (levelCounter != 7) {
+			levelCounter = 7;
 
 			setTimeout(() => {
-				levelThree();
+				levelSeven();
 			}, 1000);
 		}
 	}
 
 	if (score === 260) {
-		if (levelCounter != 4) {
-			levelCounter = 4;
+		if (levelCounter != 8) {
+			levelCounter = 8;
 
 			setTimeout(() => {
-				levelFour();
+				levelEight();
 			}, 1000);
 		}
 	}
@@ -50,19 +51,19 @@ document.addEventListener('keyup', (key) => {
 		switch (levelCounter) {
 			case 0:
 				break;
-			case 1:
+			case 5:
 				score = 0;
 				levelOne();
 				break;
-			case 2:
+			case 6:
 				score = 40;
 				levelTwo();
 				break;
-			case 3:
+			case 7:
 				score = 140;
 				levelThree();
 				break;
-			case 4:
+			case 8:
 				score = 260;
 				levelFour();
 				break;

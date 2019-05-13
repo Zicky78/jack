@@ -9,25 +9,43 @@ const background = {
 	imgSrc: document.getElementById('background'),
 	x: 0,
 	y: 0,
-	w: 2305,
-	h: 986
+	w: 852,
+	h: 480
+};
+
+const parallax0 = {
+	imgSrc: document.getElementById('parallax0'),
+	x: 767,
+	y: 0,
+	w: 768,
+	h: 576,
+	move: 0
 };
 
 const parallax = {
 	imgSrc: document.getElementById('parallax'),
 	x: 0,
 	y: 0,
-	w: 2024,
-	h: 1232,
+	w: 768,
+	h: 576,
 	move: 0
 };
 
 const parallax2 = {
 	imgSrc: document.getElementById('parallax2'),
-	x: -2024,
+	x: -767,
 	y: 0,
-	w: 2024,
-	h: 1232,
+	w: 768,
+	h: 576,
+	move: 0
+};
+
+const parallax3 = {
+	imgSrc: document.getElementById('parallax3'),
+	x: -767 - 767,
+	y: 0,
+	w: 768,
+	h: 576,
 	move: 0
 };
 
@@ -37,6 +55,14 @@ const jackImg = {
 	y: 0,
 	w: 49,
 	h: 49
+};
+
+const lep = {
+	imgSrc: document.getElementById('lep-sprite'),
+	x: -1000,
+	y: 1000,
+	w: 60,
+	h: 60
 };
 
 /*/ Loop for drawing canvas /*/
@@ -68,11 +94,20 @@ function drawCanvas() {
 	/*/ Draw Jack /*/
 	drawJack();
 
+	/*/ Draw Leprechaun /*/
+	drawLep();
+
+	/*/Check Leprechaun /*/
+	checkLep();
+
 	/*/ Check Coins /*/
 	checkCoinCollision();
 
 	/*/ Update Score /*/
 	updateScore();
+
+	/*/ Check Level /*/
+	checkLevel();
 
 	/*/ Loop /*/
 	requestAnimationFrame(drawCanvas);
@@ -93,6 +128,18 @@ function drawBackground() {
 }
 
 function drawParallax() {
+	ctx.drawImage(
+		parallax0.imgSrc,
+		parallax0.x,
+		parallax0.y,
+		parallax0.w,
+		parallax0.h,
+		parallax0.move,
+		0,
+		canvas.width,
+		canvas.height
+	);
+
 	ctx.drawImage(
 		parallax.imgSrc,
 		parallax.x,
@@ -116,13 +163,34 @@ function drawParallax() {
 		canvas.width,
 		canvas.height
 	);
+
+	ctx.drawImage(
+		parallax3.imgSrc,
+		parallax3.x,
+		parallax3.y,
+		parallax3.w,
+		parallax3.h,
+		parallax3.move,
+		0,
+		canvas.width,
+		canvas.height
+	);
 }
 
 function updateParallax() {
 	if (jack.x > 0 && jack.x < 1250 - jack.w + 10) {
+		parallax0.x += jack.velX;
 		parallax.x += jack.velX;
 		parallax2.x += jack.velX;
+		parallax3.x += jack.velX;
 	}
+}
+
+function resetParallax() {
+	parallax0.x = 767;
+	parallax.x = 0;
+	parallax2.x = -767;
+	parallax3.x = -767 - 767;
 }
 
 function drawJack() {
@@ -143,6 +211,20 @@ function drawPlatforms() {
 	platforms.forEach((platform) => {
 		ctx.drawImage(platform.imgSrc, 0, 0, 160, 32, platform.x, platform.y, platform.w, platform.h);
 	});
+}
+
+function drawLep() {
+	ctx.drawImage(lep.imgSrc, 0, 0, 530, 530, lep.x, lep.y, lep.w, lep.h);
+}
+
+function checkLep() {
+	if (lep.x + 14 > jack.x && lep.x + 14 < jack.x + jack.w && lep.y + 14 > jack.y && lep.y + 14 < jack.y + jack.h) {
+		lep.x = -1000;
+		lep.y = -1000;
+		setTimeout(() => {
+			window.location.href = 'story2.html';
+		}, 1000);
+	}
 }
 
 requestAnimationFrame(drawCanvas);

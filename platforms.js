@@ -1,4 +1,4 @@
-const platforms = [];
+let platforms = [];
 
 const p_l = document.getElementById('p-l');
 const p_m = document.getElementById('p-m');
@@ -17,4 +17,8 @@ function checkPlatformCollision() {
 			ground = canvas.height - jack.h;
 		}
 	}
+}
+
+function clearPlatforms() {
+	platforms = [];
 }
