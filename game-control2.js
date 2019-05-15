@@ -3,7 +3,7 @@ let levelCounter = 0;
 
 const gameText = document.getElementById('game-text');
 
-document.addEventListener('keydown', key => {
+document.addEventListener('keydown', (key) => {
 	if (!started) {
 		if (key.code === 'Enter') {
 			levelFive();
@@ -46,7 +46,7 @@ function checkLevel() {
 	}
 }
 
-document.addEventListener('keyup', key => {
+document.addEventListener('keyup', (key) => {
 	if (key.code === 'KeyR') {
 		switch (levelCounter) {
 			case 0:
@@ -74,16 +74,11 @@ document.addEventListener('keyup', key => {
 });
 
 function checkLep() {
-	if (
-		lep.x + 14 > jack.x &&
-		lep.x + 14 < jack.x + jack.w &&
-		lep.y + 14 > jack.y &&
-		lep.y + 14 < jack.y + jack.h
-	) {
+	if (lep.x + 14 > jack.x && lep.x + 14 < jack.x + jack.w && lep.y + 14 > jack.y && lep.y + 14 < jack.y + jack.h) {
 		lep.x = -1000;
 		lep.y = -1000;
 		setTimeout(() => {
-			window.location.href = 'story2.html';
+			window.location.href = 'story3.html';
 		}, 1000);
 	}
 }
